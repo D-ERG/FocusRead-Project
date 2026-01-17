@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusRead | Speed Reading Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ჰედერი Sticky ფუნქციონალურბით -->
+    <header id="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">Focus<span class="highlight">Read</span></a>
+            
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#trainer">Trainer</a></li>
+                    <li><a href="#about">How it Works</a></li>
+                    <li><a href="#extension">Extension</a></li>
+                </ul>
+                <div class="burger" id="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Read Faster. <br>Retain <span class="highlight">More</span>.</h1>
+                <p>Master the art of Rapid Serial Visual Presentation (RSVP). Eliminate eye movement and train your focus.</p>
+                <a href="#trainer" class="btn primary-btn">Start Training</a>
+            </div>
+        </section>
+
+        <!-- Main App / Trainer Section -->
+        <section id="trainer" class="trainer-section">
+            <div class="container">
+                <div class="reader-display">
+                    <!-- Visual Guidelines (Notches) -->
+                    <div class="guidelines">
+                        <div class="notch top"></div>
+                        <div class="notch bottom"></div>
+                    </div>
+                    <!-- The Word Display Area -->
+                    <h2 id="word-output">Press <span class="highlight">Start</span></h2>
+                </div>
+
+                <div class="controls">
+                    <div class="settings">
+                        <label for="wpm">Speed (WPM):</label>
+                        <input type="number" id="wpm" value="300" min="100" max="1000" step="50">
+                    </div>
+                    <div class="buttons">
+                        <button id="start-btn" class="btn">Start</button>
+                        <button id="stop-btn" class="btn secondary-btn" disabled>Stop</button>
+                        <button id="fetch-text-btn" class="btn text-btn">Load Long Sample</button>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <textarea id="text-input" placeholder="Paste your own text here to begin speed reading..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Tutorial Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It <span class="highlight">Works</span></h2>
+                    <p>Traditional reading involves constant eye movement (saccades). We eliminate that.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>The Problem</h3>
+                        <p>Your eyes waste time moving left to right and scanning for new lines. This slows down processing.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>The Fix</h3>
+                        <p>We flash words in the exact same spot. We highlight the <span class="highlight">Optimal Recognition Point</span> (the middle letter).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>The Result</h3>
+                        <p>Your brain recognizes the word instantly. Just relax your eyes and stare at the red letter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extension Download Section -->
+        <section id="extension" class="extension-section">
+            <div class="container">
+                <div class="ext-content">
+                    <h3>Take it everywhere</h3>
+                    <p>Don't limit your training to this tool. Download our Chrome Extension to highlight focal points on any website automatically.</p>
+                    
+                    <!-- DOWNLOAD LINK-ის გაშვება -->
+                    <a href="./focus-read-extension.zip" download="FocusRead-Extension.zip" class="btn download-btn" style="text-decoration: none; display: inline-block;">
+    Download for Chrome (.zip)
+</a>
+                    <!-- DOWNLOAD LINK-ის შეჩერება -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FocusRead Project. Built for Final Exam by Dachi Ergemlidze.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

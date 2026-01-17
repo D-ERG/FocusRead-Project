@@ -1,0 +1,317 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #161616;
+    --text-main: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --accent: #e50914; /* Red color */
+    --accent-hover: #b20710;
+    --nav-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* The red highlighted letter style */
+.highlight {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* --- Header & Nav --- */
+header {
+    height: var(--nav-height);
+    width: 100%;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* Sticky Class */
+header.sticky {
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    background-color: rgba(10, 10, 10, 0.95);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+    transition: 0.2s;
+}
+
+/* --- Burger Menu --- */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Burger Animation Classes */
+.burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.burger.toggle .line2 { opacity: 0; }
+.burger.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.primary-btn, #start-btn, .download-btn {
+    background-color: var(--accent);
+    color: white;
+}
+
+.primary-btn:hover, #start-btn:hover, .download-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #333;
+    color: white;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Trainer Section --- */
+.trainer-section {
+    padding: 60px 0;
+    background-color: var(--card-bg);
+}
+
+.reader-display {
+    height: 300px;
+    background-color: #000;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Center Notches */
+.notch {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #444;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.notch.top { top: 0; }
+.notch.bottom { bottom: 0; }
+
+#word-output {
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace; /* Monospace ასოებს ასწორებს ერთმანეთთან */
+    font-weight: 400;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#wpm {
+    padding: 10px;
+    background: #333;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.input-area textarea {
+    width: 100%;
+    height: 150px;
+    background-color: #222;
+    color: #ccc;
+    border: 1px solid #333;
+    padding: 15px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+/* --- About Section (Tutorial) --- */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    border-top: 1px solid #222;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    position: relative;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* --- Extension Section --- */
+.extension-section {
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+}
+
+.download-btn {
+    animation: pulse 2s infinite;
+}
+
+footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid #222;
+}
+
+/* --- Responsive Design (მობილური) --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        top: var(--nav-height);
+        height: 100vh;
+        background-color: var(--card-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+        border-left: 1px solid #333;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger { display: block; }
+    .hero h1 { font-size: 2.5rem; }
+    #word-output { font-size: 2.5rem; }
+    
+    .controls { flex-direction: column; width: 100%; }
+    .settings, .buttons { width: 100%; display: flex; justify-content: center; gap: 10px; }
+}
